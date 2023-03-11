@@ -5,6 +5,7 @@ import TextBox from './components/TextBox'
 import MainBottomButtons from './components/MainBottomButtons';
 import ResumeRewrite from './pages/ResumeRewrite'
 import Courses from './pages/Courses';
+import Options from './pages/Options';
 
 const App = () => (
   <Container>
@@ -23,6 +24,8 @@ const App = () => (
     <TextBox></TextBox>
     <MainBottomButtons></MainBottomButtons>
     {/* <ResumeRewrite></ResumeRewrite> */}
+    <Options></Options>
+
   </Container>
 )
 
