@@ -6,10 +6,14 @@ function MainBottomButtons() {
     return (
         <Container>
             <Row>
+                <Col></Col>
                 <Col>1 of 1</Col>
+                <Col></Col>
             </Row>
             <Row>
+                <Col></Col>
                 <Col>1 of 1</Col>
+                <Col></Col>
             </Row>
         </Container>
     );
