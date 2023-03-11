@@ -4,10 +4,11 @@ import NavBar from './components/NavBar';
 import Logo from './components/TextBox'
 import MainBottomButtons from './components/MainBottomButtons';
 import ResumeRewrite from './pages/ResumeRewrite'
+import Courses from './pages/Courses';
 
 const App = () => (
   <Container>
-    <NavBar></NavBar>
+    {/* <NavBar></NavBar>
     <br></br>
     <br></br>  
     <br></br>
@@ -20,7 +21,9 @@ const App = () => (
     <br></br>
     <br></br>
     <Logo></Logo>
-    <MainBottomButtons></MainBottomButtons>
+    <MainBottomButtons></MainBottomButtons> */}
+    {/* <ResumeRewrite></ResumeRewrite> */}
+    <Courses></Courses>
   </Container>
 )
 
