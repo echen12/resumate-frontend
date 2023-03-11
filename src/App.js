@@ -7,7 +7,7 @@ import ResumeRewrite from './pages/ResumeRewrite'
 
 const App = () => (
   <Container>
-    <NavBar></NavBar>
+    {/* <NavBar></NavBar>
     <br></br>
     <br></br>  
     <br></br>
@@ -20,7 +20,8 @@ const App = () => (
     <br></br>
     <br></br>
     <Logo></Logo>
-    <MainBottomButtons></MainBottomButtons>
+    <MainBottomButtons></MainBottomButtons> */}
+  <ResumeRewrite></ResumeRewrite>
   </Container>
 )
 
