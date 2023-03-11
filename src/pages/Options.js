@@ -28,7 +28,7 @@ const Options = () => {
             <Card className="text-center">
                 <Card.Header>Rewrite Resume</Card.Header>
                 <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Title>insert image</Card.Title>
                     <Card.Text>
                         With supporting text below as a natural lead-in to additional content.
                     </Card.Text>
@@ -40,7 +40,7 @@ const Options = () => {
             <Card className="text-center">
                 <Card.Header>Courses</Card.Header>
                 <Card.Body>
-                    <Card.Title>Special title treatment</Card.Title>
+                    <Card.Title>insert image</Card.Title>
                     <Card.Text>
                         With supporting text below as a natural lead-in to additional content.
                     </Card.Text>

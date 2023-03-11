@@ -50,7 +50,11 @@ const App = () => {
   return (
     <Container>
       <NavBar></NavBar>
-      <Logo></Logo>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <TextBox></TextBox>
       <MainBottomButtons onClick={postResumePdf()}></MainBottomButtons>
     </Container>
   )
