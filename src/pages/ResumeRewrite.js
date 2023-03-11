@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
+import NavBar from '../components/NavBar';
 
 
 const ResumeRewrite = () => {
@@ -14,6 +15,12 @@ const ResumeRewrite = () => {
 
     return (
         <Container fluid>
+            <NavBar></NavBar>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <Row>
                 <Col>
                     <Row>
