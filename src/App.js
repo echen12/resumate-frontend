@@ -1,13 +1,24 @@
 import './App.css';
 import Container from 'react-bootstrap/Container';
 import NavBar from './components/NavBar';
-import Logo from './components/Logo'
+import Logo from './components/TextBox'
 import MainBottomButtons from './components/MainBottomButtons';
 
 
 const App = () => (
   <Container>
     <NavBar></NavBar>
+    <br></br>
+    <br></br>  
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <Logo></Logo>
     <MainBottomButtons></MainBottomButtons>
   </Container>
