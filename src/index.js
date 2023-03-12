@@ -13,7 +13,35 @@ import common_hi from "./translations/hi/common.json";
 import common_jp from "./translations/jp/common.json";
 import common_kr from "./translations/kr/common.json";
 import common_pl from "./translations/pl/common.json";
+import Courses from './pages/Courses';
+import Options from './pages/Options';
 
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import ResumeRewrite from './pages/ResumeRewrite';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "courses",
+    element: <Courses />
+  },
+  {
+    path: "options",
+    element: <Options/>
+  },
+  {
+    path: "rewrite",
+    element: <ResumeRewrite/>
+  }
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -48,13 +76,22 @@ i18next.init({
   },
 });
 
+
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18next}>
-      <App />
+      <RouterProvider router = {router} />
     </I18nextProvider>
   </React.StrictMode>
-);
+)
+
+// root.render(
+//   <React.StrictMode>
+//     <I18nextProvider i18n={i18next}>
+//       <App />
+//     </I18nextProvider>
+//   </React.StrictMode>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

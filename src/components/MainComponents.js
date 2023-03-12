@@ -4,10 +4,12 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 import React, { Component, useState } from "react";
+//import { useState, useEffect } from 'react'
 import axios from 'axios';
+import {useTranslation} from "react-i18next";
 
 class MainComponents extends Component {
-    [ state ] = useState("");
+    //[ state ] = useState("");
     button_style = {
         background: '#8f8ab3',
         color: '#ffffff',

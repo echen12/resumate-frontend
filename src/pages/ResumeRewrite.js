@@ -6,8 +6,6 @@ import Stack from 'react-bootstrap/Stack';
 import NavBar from '../components/NavBar';
 import {useTranslation} from "react-i18next";
 import { useState, useEffect } from 'react'
-
-
 import axios from 'axios'
 
 const ResumeRewrite = () => {

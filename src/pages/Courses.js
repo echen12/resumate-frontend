@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import NavBar from '../components/NavBar';
 import CourseCard from '../components/CourseCard';
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 
 const Courses = () => {
