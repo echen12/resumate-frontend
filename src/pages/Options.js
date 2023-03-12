@@ -47,7 +47,9 @@ const Options = () => {
                     <Card.Text>
                         {t("Improve your skills by taking relevant courses.")}
                     </Card.Text>
-                    <Button variant="primary">{t("Check out courses")}</Button>
+                    <Link to="/courses" state={state}>
+                        <Button variant="primary">{t("Check out courses")}</Button>
+                    </Link>
                 </Card.Body>
             </Card>
 

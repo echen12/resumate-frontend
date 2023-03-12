@@ -6,10 +6,13 @@ import NavBar from '../components/NavBar';
 import CourseCard from '../components/CourseCard';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useLocation, Link } from "react-router-dom";
 
 
 const Courses = () => {
-    
+    const location = useLocation();
+    const dictionary = location.state;
+
     const courseStyle = {
         center: {
             marginLeft: "auto",
@@ -23,7 +26,7 @@ const Courses = () => {
         axios({
             method: "GET",
             url: "http://localhost:5000/courses/",
-            data: "", // state from MainComponents
+            data: dictionary, // state from MainComponents
         }).then(response => {
             setCourseDictionary(response.data);
         }).catch(error => {
@@ -39,6 +42,12 @@ const Courses = () => {
             <br></br>
             
             <Col class="overflow-auto border">
+                {
+                    Object.keys(courseDictionary).map((key, index) => {
+                        <CourseCard title={key} text={courseDictionary[key]}/>
+                    })
+                }
+                {/* <CourseCard title={"tets title"} text={"fdsas"} />
                 <CourseCard title={"tets title"} text={"fdsas"} />
                 <CourseCard title={"tets title"} text={"fdsas"} />
                 <CourseCard title={"tets title"} text={"fdsas"} />
@@ -46,8 +55,7 @@ const Courses = () => {
                 <CourseCard title={"tets title"} text={"fdsas"} />
                 <CourseCard title={"tets title"} text={"fdsas"} />
                 <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
+                <CourseCard title={"tets title"} text={"fdsas"} /> */}
             </Col>
 
         </Container>
