@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 
 function Footer() {
   return (
-    <Container fluid="md" 
+    <Container fluid="md" >
       <Row>
         &copy; 2023 BCIT Hack the Break
       </Row>
