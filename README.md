@@ -4,7 +4,6 @@
 
 ## About the project
 
-Be sure to write what inspired you, what you learned, how you built your project, and the challenges you faced. Format your story in Markdown.
 Recently, the Canadian government has announced a new plan to welcome over 500,000 immigrants each year by 2025. We see a demand for Resumate since it can help fight some of the many challenges that new immigrants face when settling in a new country. Resumate can provide help with resume editing, as well as suggest courses and education to increase their skills and experience level. Through this, Resumate can improve a new immigrant’s chance of securing a job.
 
 ## Inspiration
