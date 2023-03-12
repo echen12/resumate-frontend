@@ -16,6 +16,7 @@ const ResumeRewrite = () => {
     const location = useLocation();
     const state = location.state;
     console.log(state);
+    console.log(typeof(state))
 
     const divStyle = {
         background: '#D9E2FC',
@@ -43,8 +44,13 @@ const ResumeRewrite = () => {
                 "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
             },
         }).then(response => {
-            setOldResume(response.data[0])
-            setNewResume(response.data[1])
+            // console.log(response.data[0])
+            // console.log(response.data[1])
+            // setOldResume(response.data[0])
+            // setNewResume(response.data[1])
+
+            setOldResume(state)
+            setNewResume(response.data)
         })
     })
 
