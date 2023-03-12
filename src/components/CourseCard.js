@@ -9,8 +9,16 @@ const CourseCard = ( props ) => {
 
     const cardStyle = {
         display: "flex",
-        justifyContent: "center"
+        justifyContent: "center",
+        margin: "15px"
     }
+
+    const buttonStyle = {
+        background: '#8f8ab3',
+        color: '#ffffff',
+        border: 'None'
+    }
+
 
     return (
         <Card style={cardStyle}>
@@ -20,7 +28,7 @@ const CourseCard = ( props ) => {
                     {props.text}
                 </Card.Text>
                 <Link to={props.url}>
-                    <Button variant="primary">{t("Visit Course")}</Button>
+                    <Button style={buttonStyle} variant="primary">{t("Visit Course")}</Button>
                 </Link>
             </Card.Body>
         </Card>

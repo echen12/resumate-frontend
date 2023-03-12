@@ -58,10 +58,10 @@ const Courses = () => {
                 <br></br>
                 <br></br>
 
-                <Col className="overflow-auto border">
+                <Col className="overflow-auto border-0">
                     {
                         Object.keys(courseDictionary).map((key, index) => {
-                            return <CourseCard url={courseDictionary[key]} title={key} />
+                            return <CourseCard className='mb-3 mt-3' url={courseDictionary[key]} title={key} />
                         })
                     }
                 </Col>
