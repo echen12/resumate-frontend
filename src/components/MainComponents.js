@@ -18,21 +18,21 @@ class MainComponents extends Component {
         resume: ""
     };
 
-    onSubmit = () => {
-        axios({
-            method: 'POST',
-            url: 'http://127.0.0.1:5000/job_resume/',
-            data: this.state,
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-            },
-          }).then(response => {
-            console.log(response.data);
-          }).catch(error => {
-            console.log(error);
-          });
-    };
+    // onSubmit = () => {
+    //     axios({
+    //         method: 'POST',
+    //         url: 'http://127.0.0.1:5000/job_resume/',
+    //         data: this.state,
+    //         headers: {
+    //           "Access-Control-Allow-Origin": "*",
+    //           "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+    //         },
+    //       }).then(response => {
+    //         console.log(response.data);
+    //       }).catch(error => {
+    //         console.log(error);
+    //       });
+    // };
 
     render() {
         return (

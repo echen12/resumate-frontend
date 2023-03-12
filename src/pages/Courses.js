@@ -15,6 +15,19 @@ const Courses = () => {
         }
     }
 
+    const[courseDictionary, setCourseDictionary] = useState('')
+
+    useEffect(() => {
+        axios({
+            method: "GET",
+            url: "http://localhost:5000/courses/",
+            data: "", // state from MainComponents
+        }).then(response => {
+            setCourseDictionary(response.data);
+        }).catch(error => {
+            console.log(error);
+        })
+    })
 
     return (
         <Container>

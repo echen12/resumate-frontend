@@ -22,19 +22,6 @@ const App = () => {
 
   form.append("files", filePath)
 
-
-  function getCourseData() {
-    axios({
-      method: "GET",
-      url: "http://localhost:5000"
-    })
-      .then(response => {
-        console.log(response.data)
-      }).catch(error => {
-        console.log(error)
-      })
-  }
-
   axios({
     method: "GET",
     url: "http://localhost:5000/resumeResults"
@@ -60,30 +47,6 @@ const App = () => {
     console.log(error);
   });
 
-  axios({
-    // mode: 'no-cors',
-    method: 'POST',
-    url: 'http://127.0.0.1:5000/temp',
-    data: {
-      id: 11,
-      name: "Tom Brady",
-      username: "Brad",
-      email: "tombrad@asd.com",
-    },
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
-      // 'Accept'       : 'application/json',
-      // 'Content-Type' : 'application/json',
-      // "Access-Control-Allow-Origin": "*",
-      // "Access-Control-Allow-Methods": "*",
-      // "Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
-    },
-  }).then(function (response) {
-    console.log(response);
-  }).catch(function (error) {
-    console.log(error);
-  });
 
   // function postResumePdf() {
   //   axios({
