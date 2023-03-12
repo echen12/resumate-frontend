@@ -13,7 +13,12 @@ function TextBox() {
                 <Form.Label>Job Description</Form.Label>
                 <Form.Control as="textarea" rows={9} placeholder="Paste your job description here" />
             </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Resume</Form.Label>
+                <Form.Control as="textarea" rows={9} placeholder="Paste your resume here" />
+            </Form.Group>
         </Form>
+        
     );
 }
 
