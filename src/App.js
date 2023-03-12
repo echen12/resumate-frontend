@@ -7,6 +7,7 @@ import MainBottomButtons from './components/MainBottomButtons';
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 import CourseCard from './components/CourseCard';
+import MainComponents from './components/MainComponents';
 
 const App = () => {
   const [courseData] = useState(null)
@@ -87,8 +88,7 @@ const App = () => {
       <br></br>
       <br></br>
       <br></br>
-      <TextBox></TextBox>
-      <MainBottomButtons></MainBottomButtons>
+      <MainComponents></MainComponents>
     </Container>
   )
 }
