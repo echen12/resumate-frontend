@@ -2,11 +2,15 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { useTranslation } from 'react-i18next';
 
 function LanguageDropdown() {
+  const dropdownColour = {
+    background: '#8a8eb3',
+    color: ''
+  };
     const [t, i18n] = useTranslation('common');
 
   return (
     <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
+      <Dropdown.Toggle variant="success" id="dropdown-basic" style={dropdownColour}>
         {t("Languages")}
       </Dropdown.Toggle>
 
