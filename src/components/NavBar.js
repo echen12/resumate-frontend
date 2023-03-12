@@ -8,9 +8,20 @@ const NavBar = () => {
         background: '#D9E2FC',
     };
     return (
-        <Navbar expand="lg" fixed="top" style={divStyle}>
-            <Container >
-                <Navbar.Brand href="#home" >Resumate</Navbar.Brand>
+        // <Navbar expand="lg" fixed="top" style={divStyle}>
+            <Navbar bg="dark" fixed="top" variant="dark">
+                    <Container>
+                        <Navbar.Brand href="#home">
+                            <img
+                                alt=""
+                                src="/Logo.png"
+                                width="30"
+                                height="30"
+                                className="d-inline-block align-top"
+                            />{' '}
+                            Resumate
+                        </Navbar.Brand>
+                {/* <Navbar.Brand href="#home" >Resumate</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
