@@ -8,11 +8,20 @@ import Stack from 'react-bootstrap/Stack';
 
 function MainBottomButtons() {
     const divStyle = {
-        background: '#D9E2FC'};
+        background: '#8f8ab3',
+        color: '#ffffff'
+    };
+    const button_style = {
+        background: '#001247',
+        color: '#ffffff'
+    };
+
+
+
     return (
-        <Stack gap={2} className="col-md-5 mx-auto">
-            <Button variant="outline-primary btn-primary" style={divStyle}>Upload Resume</Button>
-            <Button variant="outline-primary  btn-primary" style={divStyle}>Analyze</Button>
+        <Stack gap={2} className="col-md-5 mx-auto" >
+            <Button variant="outline-light btn-dark" style={divStyle}>Upload Resume</Button>
+            <Button variant="outline-light  btn-dark" style={button_style}>Analyze</Button>
         </Stack>
     );
 }
