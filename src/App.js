@@ -8,6 +8,10 @@ import axios from 'axios';
 import { useState, useEffect } from 'react'
 import CourseCard from './components/CourseCard';
 
+import Options from './pages/Options';
+import Courses from './pages/Courses';
+import ResumeRewrite from './pages/ResumeRewrite';
+
 const App = () => {
   const [courseData] = useState(null)
 
@@ -82,13 +86,16 @@ const App = () => {
 
   return (
     <Container>
-      <NavBar></NavBar>
+      {/* <NavBar></NavBar>
       <br></br>
       <br></br>
       <br></br>
       <br></br>
       <TextBox></TextBox>
-      <MainBottomButtons></MainBottomButtons>
+      <MainBottomButtons></MainBottomButtons> */}
+      {/* <Options></Options> */}
+      {/* <Courses></Courses> */}
+      <ResumeRewrite></ResumeRewrite>
     </Container>
   )
 }

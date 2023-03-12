@@ -5,9 +5,11 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import NavBar from '../components/NavBar';
 import CourseCard from '../components/CourseCard';
+import {useTranslation} from "react-i18next";
 
 
 const Options = () => {
+    const {t, i18n} = useTranslation('common');
 
     const cardStyle = {
         center: {
@@ -26,25 +28,23 @@ const Options = () => {
             <br></br>
             <br></br>
             <Card className="text-center">
-                <Card.Header>Rewrite Resume</Card.Header>
                 <Card.Body>
                     <Card.Title>insert image</Card.Title>
                     <Card.Text>
-                        With supporting text below as a natural lead-in to additional content.
+                        {t("Improve your resume now with AI")}
                     </Card.Text>
-                    <Button variant="primary">Rewrite Now</Button>
+                    <Button variant="primary">{t("Rewrite now")}</Button>
                 </Card.Body>
             </Card>
             <br></br>
             <br></br>
             <Card className="text-center">
-                <Card.Header>Courses</Card.Header>
                 <Card.Body>
                     <Card.Title>insert image</Card.Title>
                     <Card.Text>
-                        With supporting text below as a natural lead-in to additional content.
+                        {t("Improve your skills by taking relevant courses.")}
                     </Card.Text>
-                    <Button variant="primary">Go to courses</Button>
+                    <Button variant="primary">{t("Check out courses")}</Button>
                 </Card.Body>
             </Card>
 
