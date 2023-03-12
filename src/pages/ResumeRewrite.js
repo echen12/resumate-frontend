@@ -7,9 +7,15 @@ import NavBar from '../components/NavBar';
 import {useTranslation} from "react-i18next";
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useLocation, Link } from "react-router-dom";
+
 
 const ResumeRewrite = () => {
     const {t, i18n} = useTranslation('common');
+
+    const location = useLocation();
+    const state = location.state;
+    console.log(state);
 
     const divStyle = {
         background: '#D9E2FC',
@@ -18,10 +24,24 @@ const ResumeRewrite = () => {
     const[oldResume, setOldResume] = useState('')
     const[newResume, setNewResume] = useState('')
 
+    const bodydata = new FormData()
+
+    bodydata.append('resume', {state});
+
     useEffect(() => {
         axios({
-            method: "GET",
-            url: "http://localhost:5000/resumeResults"
+            // method: "GET",
+            method: "POST",
+            url: "http://localhost:5000/results",
+            // url: "http://localhost:5000/resumeResults"
+            // data: {
+            //     resume: {state}
+            // },
+            data : bodydata,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+            },
         }).then(response => {
             setOldResume(response.data[0])
             setNewResume(response.data[1])
@@ -83,13 +103,13 @@ const ResumeRewrite = () => {
     //     )
     // });
 
-    axios({
-        method: "GET",
-        url: "http://localhost:5000/resumeResults"
-    }).then(response => {
-        console.log(response.data[0])
-        console.log(response.data[1])
-    });
+    // axios({
+    //     method: "GET",
+    //     url: "http://localhost:5000/resumeResults"
+    // }).then(response => {
+    //     console.log(response.data[0])
+    //     console.log(response.data[1])
+    // });
 
     return (
         <Container fluid>

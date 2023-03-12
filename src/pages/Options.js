@@ -14,6 +14,8 @@ const Options = () => {
     const location = useLocation();
     const state = location.state;
     console.log(state);
+    console.log(state["jobDescription"])
+    console.log(state["resume"])
 
     const cardStyle = {
         center: {
@@ -36,7 +38,9 @@ const Options = () => {
                     <Card.Text>
                         {t("Improve your resume now with AI")}
                     </Card.Text>
-                    <Button variant="primary">{t("Rewrite now")}</Button>
+                    <Link to = "/rewrite" state={state["resume"]}>
+                        <Button variant="primary">{t("Rewrite now")}</Button>
+                    </Link>
                 </Card.Body>
             </Card>
             <br></br>
