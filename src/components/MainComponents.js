@@ -7,12 +7,14 @@ import React, { Component, useState } from "react";
 //import { useState, useEffect } from 'react'
 import axios from 'axios';
 import {useTranslation} from "react-i18next";
+import { Link } from "react-router-dom";
 
 class MainComponents extends Component {
     //[ state ] = useState("");
     button_style = {
         background: '#8f8ab3',
         color: '#ffffff',
+        width: '100%'
     };
 
     state = {
@@ -63,12 +65,14 @@ class MainComponents extends Component {
                 </Form>
                 <Stack gap={2} className="col-md-5 mx-auto" >
                     {/* <Button variant="outline-light btn-dark" style={divStyle}>Upload Resume</Button> */}
-                    <Button 
-                        variant="outline-light  btn-dark" 
-                        style={this.button_style}
-                        onClick={this.onSubmit}>
-                            Analyze
+                    <Link to="/options" state={this.state}>
+                        <Button 
+                            variant="outline-light  btn-dark" 
+                            style={this.button_style}
+                            onClick={this.onSubmit}>
+                                Analyze
                         </Button>
+                    </Link>
                     <div className="bg-light "></div>
                     <div className="bg-light "></div>
                     <div className="bg-light "></div>

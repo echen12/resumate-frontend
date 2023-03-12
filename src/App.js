@@ -76,7 +76,7 @@ const App = () => {
 
   return (
     <Container>
-      {/* <HomePage></HomePage> */}
+      <HomePage></HomePage>
       {/* <Options></Options> */}
       {/* <Courses></Courses> */}
       {/* <ResumeRewrite></ResumeRewrite> */}

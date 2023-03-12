@@ -6,10 +6,14 @@ import Card from 'react-bootstrap/Card';
 import NavBar from '../components/NavBar';
 import CourseCard from '../components/CourseCard';
 import {useTranslation} from "react-i18next";
+import { useLocation, Link } from "react-router-dom";
 
 
 const Options = () => {
     const {t, i18n} = useTranslation('common');
+    const location = useLocation();
+    const state = location.state;
+    console.log(state);
 
     const cardStyle = {
         center: {
@@ -17,7 +21,6 @@ const Options = () => {
             marginRgiht: "auto"
         }
     }
-
 
     return (
         <Container>
