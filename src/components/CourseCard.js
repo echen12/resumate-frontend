@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap"
 import Button from 'react-bootstrap/Button';
 import {useTranslation} from "react-i18next";
+import { Link } from "react-router-dom";
 
 
 const CourseCard = ( props ) => {
@@ -18,7 +19,9 @@ const CourseCard = ( props ) => {
                 <Card.Text>
                     {props.text}
                 </Card.Text>
-                <Button variant="primary">{t("Visit Course")}</Button>
+                <Link to={props.url}>
+                    <Button variant="primary">{t("Visit Course")}</Button>
+                </Link>
             </Card.Body>
         </Card>
     )

@@ -1,7 +1,5 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import NavBar from '../components/NavBar';
 import CourseCard from '../components/CourseCard';
 import { useState, useEffect } from 'react'
@@ -11,7 +9,10 @@ import { useLocation, Link } from "react-router-dom";
 
 const Courses = () => {
     const location = useLocation();
-    const dictionary = location.state;
+    const state = location.state;
+    localStorage.setItem('infoState', state);
+
+    const infoState = localStorage.getItem('infoState', state);
 
     const courseStyle = {
         center: {
@@ -19,47 +20,48 @@ const Courses = () => {
             marginRgiht: "auto"
         }
     }
+    
+    const form = new FormData();
+    form.append('resume', infoState['resume']);
+    form.append('job_description', infoState['jobDescription']);
 
     const[courseDictionary, setCourseDictionary] = useState('')
 
     useEffect(() => {
         axios({
-            method: "GET",
-            url: "http://localhost:5000/courses/",
-            data: dictionary, // state from MainComponents
+            method: "POST",
+            url: "http://localhost:5000/courses",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+            },
+            data: form,
         }).then(response => {
             setCourseDictionary(response.data);
-        }).catch(error => {
-            console.log(error);
         })
-    })
-
-    return (
-        <Container>
-            <NavBar></NavBar>
-            <br></br>
-            <br></br>
-            <br></br>
-            
-            <Col class="overflow-auto border">
-                {
-                    Object.keys(courseDictionary).map((key, index) => {
-                        <CourseCard title={key} text={courseDictionary[key]}/>
-                    })
-                }
-                {/* <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} />
-                <CourseCard title={"tets title"} text={"fdsas"} /> */}
-            </Col>
-
-        </Container>
-    );
+    }, [null]);
+    
+    if (Object.keys(courseDictionary).length != 0) {
+        return (
+            <Container>
+                <NavBar></NavBar>
+                <br></br>
+                <br></br>
+                <br></br>
+                
+                <Col className="overflow-auto border">
+                    {
+                        Object.keys(courseDictionary).map((key, index) => {
+                            return <CourseCard url={courseDictionary[key]} title={key}/>
+                        })
+                    }
+                </Col>
+    
+            </Container>
+        );
+    } else {
+        return <div>loading...</div>
+    }
 }
 
 export default Courses
