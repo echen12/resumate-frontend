@@ -7,7 +7,7 @@ import NavBar from '../components/NavBar';
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
 
@@ -18,7 +18,7 @@ const StyledP = styled.p`
 `;
 
 const ResumeRewrite = () => {
-    const { t, i18n } = useTranslation('common');
+    const { t } = useTranslation('common');
 
     const location = useLocation();
     const state = location.state;
@@ -60,69 +60,6 @@ const ResumeRewrite = () => {
             setNewResume(response.data)
         })
     }, [null])
-
-    // axios({
-    //     method: "GET",
-    //     url: "http://localhost:5000/resumeResults"
-    // })
-    // // .then(response => {
-    // //     console.log(response.data)
-
-    // //     const oldResume = response.data[0]
-    // //     console.log(response.data[0])
-    // //     console.log(response.data[1])
-    // //     const newResume = response.data[1]
-    // // })
-    // .then(response => {
-    //     return (
-    //         <Container fluid>
-    //             <NavBar></NavBar>
-    //             <br></br>
-    //             <br></br>
-    //             <br></br>
-    //             <br></br>
-    //             <br></br>
-    //             <Row>
-    //                 <Col>
-    //                     <Row>
-    //                         <h1>New resume</h1>
-    //                         <p>
-    //                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    //                         </p>
-    //                     </Row>
-    //                 </Col>
-    //                 <Col>
-    //                     <Row>
-    //                         <h1>Old resume</h1>
-    //                         <p>
-    //                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    //                         </p>
-    //                     </Row>
-    //                 </Col>
-    //             </Row>
-    //             <br></br>
-    //             <br></br>
-    //             <br></br>
-    //             <br></br>
-    //             {/* <Row>
-    //                 <Button variant="primary">Copy</Button>{' '}
-    //                 <Button variant="primary">Save</Button>{' '}
-    //             </Row> */}
-    //             <Stack gap={2} className="col-md-5 mx-auto">
-    //                 <Button variant="outline-primary" style={divStyle}>Copy</Button>
-    //                 <Button variant="outline-primary" style={divStyle}>Save</Button>
-    //             </Stack>
-    //         </Container>
-    //     )
-    // });
-
-    // axios({
-    //     method: "GET",
-    //     url: "http://localhost:5000/resumeResults"
-    // }).then(response => {
-    //     console.log(response.data[0])
-    //     console.log(response.data[1])
-    // });
 
     if (newResume != '' && oldResume != '') {
         return (

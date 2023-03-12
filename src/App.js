@@ -1,17 +1,8 @@
 import './App.css';
 import Container from 'react-bootstrap/Container';
-import NavBar from './components/NavBar';
-import TextBox from './components/TextBox'
-import MainBottomButtons from './components/MainBottomButtons';
-
 import axios from 'axios';
-import { useState, useEffect } from 'react'
-import CourseCard from './components/CourseCard';
-import MainComponents from './components/MainComponents';
+import { useState } from 'react'
 
-import Options from './pages/Options';
-import Courses from './pages/Courses';
-import ResumeRewrite from './pages/ResumeRewrite';
 import HomePage from './pages/HomePage';
 
 const App = () => {
@@ -77,9 +68,6 @@ const App = () => {
   return (
     <Container>
       <HomePage></HomePage>
-      {/* <Options></Options> */}
-      {/* <Courses></Courses> */}
-      {/* <ResumeRewrite></ResumeRewrite> */}
     </Container>
   )
 }

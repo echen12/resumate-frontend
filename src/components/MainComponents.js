@@ -1,12 +1,7 @@
-import TextBox from './TextBox.js';
-import MainBottomButtons from './MainBottomButtons.js';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-import React, { Component, useState } from "react";
-//import { useState, useEffect } from 'react'
-import axios from 'axios';
-import i18next, { t } from "i18next";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
@@ -15,7 +10,7 @@ const MainComponents = () => {
     //[ state ] = useState("");
     const [jobDescription, setJobDescription] = useState("")
     const [resume, setResume] = useState("")
-    const {t, i18n} = useTranslation('common');
+    const {t} = useTranslation('common');
 
 
     const buttonStyle = {
@@ -23,18 +18,6 @@ const MainComponents = () => {
         color: '#ffffff',
         width: '100%'
     }
-
-    // button_style = {
-
-    // };
-
-    //  {t, i18n} = useTranslation('common');
-
-
-    // state = {
-    //     jobDescription: "",
-    //     resume: ""
-    // };
 
     return (
         <>

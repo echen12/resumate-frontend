@@ -46,17 +46,17 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 i18next.init({
-  interpolation: { escapeValue: false },  // React already does escaping
-  lng: 'en',                              // language to use
+  interpolation: { escapeValue: false },  
+  lng: 'en',                              
   resources: {
     cn: {
-      common: common_cn               // 'common' is our custom namespace
+      common: common_cn               
     },
     en: {
       common: common_en
     },
     es: {
-      common: common_es               // 'common' is our custom namespace
+      common: common_es               
     },
     fr: {
       common: common_fr
@@ -85,13 +85,6 @@ root.render(
   </React.StrictMode>
 )
 
-// root.render(
-//   <React.StrictMode>
-//     <I18nextProvider i18n={i18next}>
-//       <App />
-//     </I18nextProvider>
-//   </React.StrictMode>
-// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

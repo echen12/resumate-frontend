@@ -1,29 +1,27 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import NavBar from '../components/NavBar';
-import CourseCard from '../components/CourseCard';
 import {useTranslation} from "react-i18next";
 import { useLocation, Link } from "react-router-dom";
 
 
 const Options = () => {
-    const {t, i18n} = useTranslation('common');
+    const {t} = useTranslation('common');
     const location = useLocation();
     const state = location.state;
-    console.log(state);
-    console.log(state["jobDescription"])
-    console.log(state["resume"])
 
-    const cardStyle = {
-        center: {
-            marginLeft: "auto",
-            marginRgiht: "auto",
-        },
+    // console.log(state);
+    // console.log(state["jobDescription"])
+    // console.log(state["resume"])
+
+    // const cardStyle = {
+    //     center: {
+    //         marginLeft: "auto",
+    //         marginRgiht: "auto",
+    //     },
         
-    }
+    // }
 
     const buttonStyle = {
         background: '#8f8ab3',

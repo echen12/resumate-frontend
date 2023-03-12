@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar';
 import CourseCard from '../components/CourseCard';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
 
