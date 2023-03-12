@@ -9,6 +9,10 @@ import { useState, useEffect } from 'react'
 import CourseCard from './components/CourseCard';
 import MainComponents from './components/MainComponents';
 
+import Options from './pages/Options';
+import Courses from './pages/Courses';
+import ResumeRewrite from './pages/ResumeRewrite';
+
 const App = () => {
   const [courseData] = useState(null)
 
@@ -30,6 +34,31 @@ const App = () => {
         console.log(error)
       })
   }
+
+  axios({
+    method: "GET",
+    url: "http://localhost:5000/resumeResults"
+}).then(response => {
+    console.log(response.data)
+});
+
+
+  axios({
+    method: 'PUT',
+    url: 'http://127.0.0.1:5000/analyze',
+    data: {
+      data: form
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+      "Content-Type": "multipart/form-data"
+    },
+  }).then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log(error);
+  });
 
   axios({
     // mode: 'no-cors',
@@ -83,12 +112,18 @@ const App = () => {
 
   return (
     <Container>
-      <NavBar></NavBar>
+      {/* <NavBar></NavBar>
       <br></br>
       <br></br>
       <br></br>
       <br></br>
       <MainComponents></MainComponents>
+      <TextBox></TextBox>
+      <MainBottomButtons></MainBottomButtons> */}
+      <MainComponents></MainComponents>
+      <Options></Options>
+      {/* <Courses></Courses> */}
+      {/* <ResumeRewrite></ResumeRewrite> */}
     </Container>
   )
 }

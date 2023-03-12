@@ -7,7 +7,7 @@ import CourseCard from '../components/CourseCard';
 
 
 const Courses = () => {
-
+    
     const courseStyle = {
         center: {
             marginLeft: "auto",
