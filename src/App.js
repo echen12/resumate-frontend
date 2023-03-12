@@ -12,6 +12,7 @@ import MainComponents from './components/MainComponents';
 import Options from './pages/Options';
 import Courses from './pages/Courses';
 import ResumeRewrite from './pages/ResumeRewrite';
+import HomePage from './pages/HomePage';
 
 const App = () => {
   const [courseData] = useState(null)
@@ -75,16 +76,8 @@ const App = () => {
 
   return (
     <Container>
-      {/* <NavBar></NavBar>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <MainComponents></MainComponents>
-      <TextBox></TextBox>
-      <MainBottomButtons></MainBottomButtons> */}
-      <MainComponents></MainComponents>
-      <Options></Options>
+      {/* <HomePage></HomePage> */}
+      {/* <Options></Options> */}
       {/* <Courses></Courses> */}
       {/* <ResumeRewrite></ResumeRewrite> */}
     </Container>
