@@ -9,6 +9,11 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useLocation, Link } from "react-router-dom";
 
+import styled from 'styled-components'
+
+const StyledP = styled.p`
+  white-space: pre-wrap
+`;
 
 const ResumeRewrite = () => {
     const {t, i18n} = useTranslation('common');
@@ -52,7 +57,7 @@ const ResumeRewrite = () => {
             setOldResume(state)
             setNewResume(response.data)
         })
-    })
+    }, [null])
 
     // axios({
     //     method: "GET",
@@ -129,17 +134,17 @@ const ResumeRewrite = () => {
                 <Col>
                     <Row>
                         <h1>{t("New Resume")}</h1>
-                        <p>
+                        <StyledP>
                             {newResume}
-                        </p>
+                        </StyledP>
                     </Row>
                 </Col>
                 <Col>
                     <Row>
                         <h1>{t("Old Resume")}</h1>
-                        <p>
+                        <StyledP>
                             {oldResume}
-                        </p>
+                        </StyledP>
                     </Row>
                 </Col>
             </Row>
