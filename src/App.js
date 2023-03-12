@@ -6,6 +6,7 @@ import MainBottomButtons from './components/MainBottomButtons';
 
 import axios from 'axios';
 import { useState, useEffect } from 'react'
+import CourseCard from './components/CourseCard';
 
 const App = () => {
   const [courseData] = useState(null)
