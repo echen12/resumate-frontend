@@ -5,6 +5,8 @@ import CourseCard from '../components/CourseCard';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useLocation, Link } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 
 const Courses = () => {
@@ -18,14 +20,21 @@ const Courses = () => {
         center: {
             marginLeft: "auto",
             marginRgiht: "auto"
+        },
+        spinnerStyle: {
+            display: "flex",
+            justifyContent: "center"
+        },
+        spinnerBorder: {
+            border: "1px solid red"
         }
     }
-    
+
     const form = new FormData();
     form.append('resume', infoState['resume']);
     form.append('job_description', infoState['jobDescription']);
 
-    const[courseDictionary, setCourseDictionary] = useState('')
+    const [courseDictionary, setCourseDictionary] = useState('')
 
     useEffect(() => {
         axios({
@@ -40,7 +49,7 @@ const Courses = () => {
             setCourseDictionary(response.data);
         })
     }, [null]);
-    
+
     if (Object.keys(courseDictionary).length != 0) {
         return (
             <Container>
@@ -48,19 +57,25 @@ const Courses = () => {
                 <br></br>
                 <br></br>
                 <br></br>
-                
+
                 <Col className="overflow-auto border">
                     {
                         Object.keys(courseDictionary).map((key, index) => {
-                            return <CourseCard url={courseDictionary[key]} title={key}/>
+                            return <CourseCard url={courseDictionary[key]} title={key} />
                         })
                     }
                 </Col>
-    
+
             </Container>
         );
     } else {
-        return <div>loading...</div>
+        return (
+            <div>
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </div>
+        )
     }
 }
 

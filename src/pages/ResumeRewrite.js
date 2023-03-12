@@ -4,10 +4,12 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 import NavBar from '../components/NavBar';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useLocation, Link } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 import styled from 'styled-components'
 
@@ -16,23 +18,23 @@ const StyledP = styled.p`
 `;
 
 const ResumeRewrite = () => {
-    const {t, i18n} = useTranslation('common');
+    const { t, i18n } = useTranslation('common');
 
     const location = useLocation();
     const state = location.state;
     console.log(state);
-    console.log(typeof(state))
+    console.log(typeof (state))
 
     const divStyle = {
         background: '#D9E2FC',
     };
 
-    const[oldResume, setOldResume] = useState('')
-    const[newResume, setNewResume] = useState('')
+    const [oldResume, setOldResume] = useState('')
+    const [newResume, setNewResume] = useState('')
 
     const bodydata = new FormData()
 
-    bodydata.append('resume', {state});
+    bodydata.append('resume', { state });
 
     useEffect(() => {
         axios({
@@ -43,7 +45,7 @@ const ResumeRewrite = () => {
             // data: {
             //     resume: {state}
             // },
-            data : bodydata,
+            data: bodydata,
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
@@ -122,47 +124,55 @@ const ResumeRewrite = () => {
     //     console.log(response.data[1])
     // });
 
-    return (
-        <Container fluid>
-            <NavBar></NavBar>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <Row>
-                <Col>
-                    <Row>
-                        <h1>{t("New Resume")}</h1>
-                        <StyledP>
-                            {newResume}
-                        </StyledP>
-                    </Row>
-                </Col>
-                <Col>
-                    <Row>
-                        <h1>{t("Old Resume")}</h1>
-                        <StyledP>
-                            {oldResume}
-                        </StyledP>
-                    </Row>
-                </Col>
-            </Row>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            {/* <Row>
-                <Button variant="primary">Copy</Button>{' '}
-                <Button variant="primary">Save</Button>{' '}
-            </Row> */}
-            <Stack gap={2} className="col-md-5 mx-auto">
-                <Button variant="outline-primary" style={divStyle}>{t("Copy")}</Button>
-                <Button variant="outline-primary" style={divStyle}>{t("Save")}</Button>
-            </Stack>
-        </Container>
-    )
-    
+    if (newResume != '' && oldResume != '') {
+        return (
+            <Container fluid>
+                <NavBar></NavBar>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Row>
+                    <Col>
+                        <Row>
+                            <h1>{t("New Resume")}</h1>
+                            <StyledP>
+                                {newResume}
+                            </StyledP>
+                        </Row>
+                    </Col>
+                    <Col>
+                        <Row>
+                            <h1>{t("Old Resume")}</h1>
+                            <StyledP>
+                                {oldResume}
+                            </StyledP>
+                        </Row>
+                    </Col>
+                </Row>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                {/* <Row>
+                    <Button variant="primary">Copy</Button>{' '}
+                    <Button variant="primary">Save</Button>{' '}
+                </Row> */}
+                <Stack gap={2} className="col-md-5 mx-auto">
+                    <Button variant="outline-primary" style={divStyle}>{t("Copy")}</Button>
+                    <Button variant="outline-primary" style={divStyle}>{t("Save")}</Button>
+                </Stack>
+            </Container>
+        )
+    } else {
+        return (
+            <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </Spinner>
+        )
+    }
+
 }
 
 export default ResumeRewrite

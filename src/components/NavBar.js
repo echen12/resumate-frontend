@@ -20,7 +20,7 @@ const NavBar = () => {
         // <Navbar expand="lg" fixed="top" style={divStyle}>
         <Navbar expand="lg" fixed="top" variant="dark" style={divStyle}>
             <Container fluid>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                     <img
                         alt=""
                         src="/Logo.png"
@@ -33,7 +33,7 @@ const NavBar = () => {
                 <Col>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">{t('Home')}</Nav.Link>
+                            <Nav.Link href="/">{t('Home')}</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Col>
