@@ -30,6 +30,31 @@ const App = () => {
   }
 
   axios({
+    method: "GET",
+    url: "http://localhost:5000/resumeResults"
+}).then(response => {
+    console.log(response.data)
+});
+
+
+  axios({
+    method: 'PUT',
+    url: 'http://127.0.0.1:5000/analyze',
+    data: {
+      data: form
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+      "Content-Type": "multipart/form-data"
+    },
+  }).then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log(error);
+  });
+
+  axios({
     // mode: 'no-cors',
     method: 'POST',
     url: 'http://127.0.0.1:5000/temp',
