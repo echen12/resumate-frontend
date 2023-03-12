@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 
 
 const MainComponents = () => {
-    //[ state ] = useState("");
     const [jobDescription, setJobDescription] = useState("")
     const [resume, setResume] = useState("")
     const {t} = useTranslation('common');

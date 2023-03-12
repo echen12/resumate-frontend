@@ -19,7 +19,6 @@ const CourseCard = ( props ) => {
         border: 'None'
     }
 
-
     return (
         <Card style={cardStyle}>
             <Card.Body >
@@ -36,5 +35,3 @@ const CourseCard = ( props ) => {
 }
 
 export default CourseCard
-
-

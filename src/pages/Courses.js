@@ -7,8 +7,6 @@ import axios from 'axios'
 import { useLocation } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
-
-
 const Courses = () => {
     const location = useLocation();
     const state = location.state;
@@ -57,7 +55,6 @@ const Courses = () => {
                 <br></br>
                 <br></br>
                 <br></br>
-
                 <Col className="overflow-auto border-0">
                     {
                         Object.keys(courseDictionary).map((key, index) => {
@@ -65,7 +62,6 @@ const Courses = () => {
                         })
                     }
                 </Col>
-
             </Container>
         );
     } else {

@@ -6,17 +6,14 @@ import Col from 'react-bootstrap/Col';
 import {useTranslation} from "react-i18next";
 
 
-
 const NavBar = () => {
     const {t} = useTranslation('common');
-
 
     const divStyle = {
         background: '#001247',
     };
     
     return (
-        // <Navbar expand="lg" fixed="top" style={divStyle}>
         <Navbar expand="lg" fixed="top" variant="dark" style={divStyle}>
             <Container fluid>
                 <Navbar.Brand href="/">
@@ -40,7 +37,6 @@ const NavBar = () => {
                 <Col></Col>
                 <Col></Col>
                 <Col></Col>
-                {/* <Navbar.Brand href="#home" >Resumate</Navbar.Brand> */}
                 <LanguageDropdown></LanguageDropdown>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
             </Container>

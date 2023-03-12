@@ -9,8 +9,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useLocation } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
-
-
 import styled from 'styled-components'
 
 const StyledP = styled.p`
@@ -22,8 +20,6 @@ const ResumeRewrite = () => {
 
     const location = useLocation();
     const state = location.state;
-    console.log(state);
-    console.log(typeof (state))
 
     const divStyle = {
         background: '#D9E2FC',
@@ -33,29 +29,18 @@ const ResumeRewrite = () => {
     const [newResume, setNewResume] = useState('')
 
     const bodydata = new FormData()
-
     bodydata.append('resume', { state });
 
     useEffect(() => {
         axios({
-            // method: "GET",
             method: "POST",
             url: "http://localhost:5000/results",
-            // url: "http://localhost:5000/resumeResults"
-            // data: {
-            //     resume: {state}
-            // },
             data: bodydata,
             headers: {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
             },
         }).then(response => {
-            // console.log(response.data[0])
-            // console.log(response.data[1])
-            // setOldResume(response.data[0])
-            // setNewResume(response.data[1])
-
             setOldResume(state)
             setNewResume(response.data)
         })
@@ -92,10 +77,6 @@ const ResumeRewrite = () => {
                 <br></br>
                 <br></br>
                 <br></br>
-                {/* <Row>
-                    <Button variant="primary">Copy</Button>{' '}
-                    <Button variant="primary">Save</Button>{' '}
-                </Row> */}
                 <Stack gap={2} className="col-md-5 mx-auto">
                     <Button variant="outline-primary" style={divStyle}>{t("Copy")}</Button>
                     <Button variant="outline-primary" style={divStyle}>{t("Save")}</Button>
@@ -109,7 +90,6 @@ const ResumeRewrite = () => {
             </Spinner>
         )
     }
-
 }
 
 export default ResumeRewrite

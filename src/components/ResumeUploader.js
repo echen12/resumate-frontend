@@ -11,7 +11,6 @@ const ResumeUploader = () => {
         }
     };
 
-    console.log("Uploaded file:", resumePdf);
     return (
         <div>
             <input 

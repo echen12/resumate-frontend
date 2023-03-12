@@ -10,19 +10,6 @@ const Options = () => {
     const {t} = useTranslation('common');
     const location = useLocation();
     const state = location.state;
-
-    // console.log(state);
-    // console.log(state["jobDescription"])
-    // console.log(state["resume"])
-
-    // const cardStyle = {
-    //     center: {
-    //         marginLeft: "auto",
-    //         marginRgiht: "auto",
-    //     },
-        
-    // }
-
     const buttonStyle = {
         background: '#8f8ab3',
         color: '#ffffff',
@@ -42,9 +29,6 @@ const Options = () => {
                     <Card.Title>
                         {t("Improve your resume now with AI")}
                     </Card.Title>
-                    {/* <Card.Text>
-                        {t("Improve your resume now with AI")}
-                    </Card.Text> */}
                     <Link to = "/rewrite" state={state["resume"]}>
                         <Button style={buttonStyle} variant="primary">{t("Rewrite now")}</Button>
                     </Link>
@@ -58,9 +42,6 @@ const Options = () => {
                     <Card.Title>
                         {t("Improve your skills by taking relevant courses.")}
                     </Card.Title>
-                    {/* <Card.Text>
-                        {t("Improve your skills by taking relevant courses.")}
-                    </Card.Text> */}
                     <Link to="/courses" state={state}>
                         <Button style={buttonStyle} variant="primary">{t("Check out courses")}</Button>
                     </Link>

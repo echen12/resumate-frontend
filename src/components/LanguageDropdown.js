@@ -6,7 +6,8 @@ function LanguageDropdown() {
     background: '#8a8eb3',
     color: ''
   };
-    const [t, i18n] = useTranslation('common');
+
+  const [t, i18n] = useTranslation('common');
 
   return (
     <Dropdown>

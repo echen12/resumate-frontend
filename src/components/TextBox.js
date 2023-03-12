@@ -1,8 +1,6 @@
 import Form from 'react-bootstrap/Form'
 import {useTranslation} from "react-i18next";
 
-
-
 function TextBox() {
     const {t} = useTranslation('common');
 
